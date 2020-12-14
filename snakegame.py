@@ -17,17 +17,17 @@ screen_height = 500
 game_window = pygame.display.set_mode((screen_width,screen_height))
 
 #! Background Image 1
-bg_img = pygame.image.load('C:\\Users\\admin\Desktop\\Snake-Game\\start.jpg')
+bg_img = pygame.image.load('start.jpg')
 bg_img = pygame.transform.scale(bg_img,
 (screen_width,screen_height)).convert_alpha()
 
 #! Background Image 2
-bg_img2 = pygame.image.load('C:\\Users\\admin\\Desktop\\Snake-Game\\back.jfif')
+bg_img2 = pygame.image.load('back.jfif')
 bg_img2 = pygame.transform.scale(bg_img2,
 (screen_width,screen_height)).convert_alpha()
 
 #! BackGround Image 3
-bg_img3 = pygame.image.load('C:\\Users\\admin\\Desktop\\Snake-Game\\gameover.jpg')
+bg_img3 = pygame.image.load('gameover.jpg')
 bg_img3 = pygame.transform.scale(bg_img3,
 (screen_width,screen_height)).convert_alpha()
 
@@ -86,8 +86,8 @@ def game_loop() :
 
 
 #! Creating highscore.txt if not
-    if(not os.path.exists("highcore.txt")):
-        with open("highcore.txt", "w") as f:
+    if(not os.path.exists("highscore.txt")):
+        with open("highscore.txt", "w") as f:
             f.write("0")
 
     with open('highscore.txt', 'r') as f : 
@@ -169,12 +169,12 @@ def game_loop() :
 
             if head in snake_list[:-1]:
                 game_over = True
-                pygame.mixer.music.load('C:\\Users\admin\Desktop\\Snake-Game\\game_over.mp3')
+                pygame.mixer.music.load('game_over.mp3')
                 pygame.mixer.music.play()
 
             if snake_x < 0 or snake_x > screen_width or snake_y < 0 or snake_y > screen_height:
                 game_over = True
-                pygame.mixer.music.load('C:\\Users\\admin\Desktop\\Snake-Game\\game_over.mp3')
+                pygame.mixer.music.load('game_over.mp3')
                 pygame.mixer.music.play()
             plot_snake(game_window, black_colour, snake_list, snake_size)
 
